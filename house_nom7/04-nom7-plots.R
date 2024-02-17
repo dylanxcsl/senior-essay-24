@@ -13,13 +13,18 @@ scatter_legis <- ggplot(
     x = "NOMINATE Dimension 1",
     y = "Constructed NOMINATE dimension"
   ) +
-  geom_point()
+  geom_point() +
+  theme(
+    panel.background = element_blank(),
+    axis.line = element_line(color = "black")
+  )
 
 # Create a boxplot of dim1 against nom7
 boxplot_legis <- ggplot(
   filter(h_vview.final.clean, party_code == 100 | party_code == 200), 
   aes(dim1, coord1D, fill = party_code)
 ) +
+  xlim(-1, 1) +
   scale_fill_manual(
     name = "Party",
     labels = c("Democrats", "Republicans"),
@@ -31,7 +36,10 @@ boxplot_legis <- ggplot(
     y = "Constructed NOMINATE dimension"
   ) +
   geom_boxplot() +
-  theme(strip.text.x = element_blank())
+  theme(
+    panel.background = element_blank(),
+    axis.line = element_line(color = "black")
+  )
 
 # Create a scatterplot of party nom7 median per Congress
 scatter_median <- ggplot(

@@ -16,7 +16,6 @@ summary(h_vview.nomte)
 
 # Create a table of legislators' NOMINATE-7 scores
 h_vview.legis <- h_vview.nomte$legislators |> as_tibble(rownames = "icpsr")
-
 h_vview.final <- left_join(h_tab.leg, h_vview.legis, by = "icpsr") |>
   mutate(dim1 = as.numeric(dim1)) |>
   mutate(prop1 = correctYea / (correctYea + wrongYea) * 100) |>
