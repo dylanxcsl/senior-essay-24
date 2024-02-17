@@ -13,7 +13,7 @@ scatter_legis <- ggplot(
     x = "NOMINATE Dimension 1",
     y = "Constructed NOMINATE dimension"
   ) +
-  geom_point() +
+  
   theme(
     panel.background = element_blank(),
     axis.line = element_line(color = "black")
