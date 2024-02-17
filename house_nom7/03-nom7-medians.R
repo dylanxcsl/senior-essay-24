@@ -12,4 +12,5 @@ h_legis.cong.clean <- h_legis.cong |> drop_na(coord1D)
 
 # Create a table of the party nom7 median per Congress
 h_legis.cong.med <- h_legis.cong.clean |>
-  group_by(congress, party_code)
+  group_by(congress, party_code) |>
+  summarise_at(vars(coord1D), list(median = median))
