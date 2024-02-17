@@ -12,8 +12,6 @@ h_vview.rolls  <- rollcall(h_vview.matrx, yea = c(1, 2, 3), nay = c(4, 5, 6),
 set.seed(337)
 h_vview.nomte <- wnominate(rcObject = h_vview.rolls, dims = 1, minvotes = 20, polarity = "20100")
 
-summary(h_vview.nomte)
-
 # Create a table of legislators' NOMINATE-7 scores
 h_vview.legis <- h_vview.nomte$legislators |> as_tibble(rownames = "icpsr")
 
