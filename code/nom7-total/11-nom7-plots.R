@@ -1,5 +1,6 @@
 # Merge data
 vview.final  <- rbind(h_vview.final.clean, s_vview.final.clean)
+vview.unique <- rbind(h_legis.cong.clean, s_legis.cong.clean)
 vview.median <- rbind(h_legis.cong.med, s_legis.cong.med)
 
 # Create a scatterplot of dim1 against nom7

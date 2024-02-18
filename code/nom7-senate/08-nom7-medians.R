@@ -8,7 +8,8 @@ s_legis.uniq <- unique(s_legis.filt[c("icpsr", "congress")])
 # Create a table of all legislators per Congress with nom7 score
 s_legis.uniq$icpsr <- as.character(s_legis.uniq$icpsr)
 s_legis.cong <- left_join(s_legis.uniq, s_vview.final.clean, by = "icpsr")
-s_legis.cong.clean <- s_legis.cong |> drop_na(coord1D)
+s_legis.cong.clean <- s_legis.cong |> drop_na(coord1D) |>
+  mutate(chamber = "Senate")
 
 # Create a table of the party nom7 median per Congress
 s_legis.cong.med <- s_legis.cong.clean |>
