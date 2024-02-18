@@ -13,3 +13,5 @@ View(s_legis.cong.med)    ## Median of constructed nom7 score for each party per
 scatter_legis.s  ## Scatterplot of all legislators (x = dim1, y = nom7)
 boxplot_legis.s  ## Boxplot of all legislators (x = dim1, y = nom7)
 scatter_median.s ## Scatterplot of party nom7 median (x = cong, y = nom7)
+
+ggsave("s.scatter_median.png")
