@@ -9,6 +9,8 @@ View(vview.unique)    ## Table with constructed nom7 score for every legislator 
 View(vview.median)    ## Median of constructed nom7 score for each party per Congress
 
 # Visualizations
-scatter_legis  ## Scatterplot of all legislators (x = dim1, y = nom7)
-boxplot_legis  ## Boxplot of all legislators (x = dim1, y = nom7)
-scatter_median ## Scatterplot of party nom7 median (x = cong, y = nom7)
+scatter_legis       ## Scatterplot of all legislators (x = dim1, y = nom7)
+boxplot_legis       ## Boxplot of all legislators (x = dim1, y = nom7)
+scatter_median.nom7 ## Scatterplot of party nom7 median (x = cong, y = nom7)
+scatter_median.all  ## Scatterplot of party nom7 median & dim 1 median
+
