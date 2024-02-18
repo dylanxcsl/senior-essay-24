@@ -1,5 +1,5 @@
 # Create a matrix of 7-coded votes
-s_vview.matrx <- as.matrix(s_tab.fin[ , 4:488])
+s_vview.matrx <- as.matrix(s_tab.fin[ , 4:461])
 
 # Run matrix through rollcall function
 s_vview.rolls  <- rollcall(s_vview.matrx, yea = c(1, 2, 3), nay = c(4, 5, 6),
