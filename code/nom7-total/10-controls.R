@@ -5,7 +5,7 @@ library(wnominate)
 
 # Dataframes
 View(vview.final)     ## Table with constructed nom7 score for every legislator (tenure not included)
-View(vview.unique)  ## Table with constructed nom7 score for every legislator (tenure included)
+View(vview.unique)    ## Table with constructed nom7 score for every legislator (tenure included)
 View(vview.median)    ## Median of constructed nom7 score for each party per Congress
 
 # Visualizations
