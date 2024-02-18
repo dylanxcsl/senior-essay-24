@@ -1,5 +1,5 @@
 # Load data
-s_legis.all <- read_csv("data/Sall_votes.csv") # Download from Voteview.com
+s_legis.all <- read_csv("data/voteview/Sall_votes.csv") # Download from Voteview.com
 
 # Create a table of all legislators per Congress
 s_legis.filt <- s_legis.all |> filter(congress > 87 & congress < 118)

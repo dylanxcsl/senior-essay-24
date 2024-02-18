@@ -2,7 +2,7 @@
 h_vview.matrx <- as.matrix(h_tab.fin[ , 4:1238])
 
 # Run matrix through rollcall function
-h_vview.rolls  <- rollcall(h_vview.matrx, yea = c(1, 2, 3), nay = c(4, 5, 6),
+h_vview.rolls <- rollcall(h_vview.matrx, yea = c(1, 2, 3), nay = c(4, 5, 6),
                           missing = c(7, 8, 9), notInLegis = 0,
                           legis.names = h_tab.fin$icpsr,
                           desc = "7-coded votes",

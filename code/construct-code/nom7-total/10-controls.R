@@ -3,6 +3,15 @@ library(tidyverse)
 library(Rvoteview)
 library(wnominate)
 
+# Create dataframes
+voview <- rbind(h_vview.final.clean, s_vview.final.clean)
+median <- rbind(h_legis.cong.med, s_legis.cong.med)
+median <- median |> pivot_longer(
+  cols      = starts_with("median"), 
+  names_to  = "type", 
+  values_to = "median"
+)
+
 # Dataframes
 View(vview.final)     ## Table with constructed nom7 score for every legislator (tenure not included)
 View(vview.unique)    ## Table with constructed nom7 score for every legislator (tenure included)
