@@ -25,4 +25,5 @@ s_vview.final <- left_join(s_tab.leg, s_vview.legis, by = "icpsr") |>
 
 # Drop NAs in h_vview.final
 s_vview.final.clean <- s_vview.final |>
-  drop_na(coord1D, prop1, prop2, prop3)
+  drop_na(coord1D, prop1, prop2, prop3) |>
+  mutate(chamber = "Senate")
