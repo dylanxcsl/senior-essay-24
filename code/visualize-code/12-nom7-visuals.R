@@ -1,9 +1,16 @@
-voview.csv <- read_csv("data/visuals/voview.csv")
-median.csv <- read_csv("data/visuals/median.csv")
+# Load libraries
+library(tidyverse)
+library(Rvoteview)
+library(wnominate)
+
+# Load dataframes
+voview_uni.csv <- read_csv("data/visualize-data/voview_unique.csv")
+voview_all.csv <- read_csv("data/visualize-data/voview_tenure.csv")
+median.csv     <- read_csv("data/visualize-data/median.csv")
 
 # Scatterplot of all legislators
 scatter.legis <- ggplot(
-  filter(voview.csv, party_code == 100 | party_code == 200),
+  filter(voview_uni.csv, party_code == 100 | party_code == 200),
   aes(dim1, coord1D, color = as.character(party_code))
 ) +
   geom_point() +
@@ -16,8 +23,8 @@ scatter.legis <- ggplot(
   ) +
   labs(
     x = "NOMINATE dimension 1",
-    y = "Constructed NOMINATE dimension",
-    title = "Legislators across dimension 1 and constructed dimension"
+    y = "Environmental score",
+    title = "Legislators across dimension 1 and environmental score"
   ) +
   theme(
     panel.background = element_blank(), 
@@ -26,7 +33,7 @@ scatter.legis <- ggplot(
 
 # Boxplot of all legislators
 boxplot.legis <- ggplot(
-  filter(voview.csv, party_code == 100 | party_code == 200),
+  filter(voview_uni.csv, party_code == 100 | party_code == 200),
   aes(dim1, coord1D, color = as.character(party_code))
 ) +
   geom_boxplot() +
@@ -39,8 +46,8 @@ boxplot.legis <- ggplot(
   ) +
   labs(
     x = "NOMINATE dimension 1",
-    y = "Constructed NOMINATE dimension",
-    title = "Legislators across dimension 1 and constructed dimension"
+    y = "Environmental score",
+    title = "Legislators across dimension 1 and environmental score"
   ) +
   theme(
     panel.background = element_blank(), 
@@ -58,7 +65,7 @@ median.party <- ggplot(
   ylim(-1, 1) +
   scale_color_manual(
     name   = "NOMINATE",
-    labels = c("Constructed", "Dimension 1"),
+    labels = c("Environmental", "Dimension 1"),
     values = c("palegreen4", "gray")
   ) +
   scale_shape_manual(
@@ -69,9 +76,14 @@ median.party <- ggplot(
   labs(
     x = "Congress",
     y = "Party median",
-    title = "Polarization on NOMINATE dimension 1 and constructed NOMINATE dimension"
+    title = "Polarization on dimension 1 and environmental score"
   ) +
   theme(
     panel.background = element_blank(), 
     axis.line = element_line(color = "black")
   )
+
+# Download visuals (ggsave())
+scatter.legis
+boxplot.legis
+median.party
