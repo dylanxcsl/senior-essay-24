@@ -10,6 +10,6 @@ View(h_legis.cong.clean)  ## Table with constructed nom7 score for every legisla
 View(h_legis.cong.med)    ## Median of constructed nom7 score for each party per Congress
 
 # Visualizations
-scatter_legis  ## Scatterplot of all legislators (x = dim1, y = nom7)
-boxplot_legis  ## Boxplot of all legislators (x = dim1, y = nom7)
-scatter_median ## Scatterplot of party nom7 median (x = cong, y = nom7)
+scatter_legis.h  ## Scatterplot of all legislators (x = dim1, y = nom7)
+boxplot_legis.h  ## Boxplot of all legislators (x = dim1, y = nom7)
+scatter_median.h ## Scatterplot of party nom7 median (x = cong, y = nom7)

@@ -1,6 +1,6 @@
 # Create a scatterplot of dim1 against nom7
-scatter_legis <- ggplot(
-  filter(h_vview.final.clean, party_code == 100 | party_code == 200), 
+scatter_legis.s <- ggplot(
+  filter(s_vview.final.clean, party_code == 100 | party_code == 200), 
   aes(dim1, coord1D, color = party_code)
 ) +
   xlim(-1, 1) +
@@ -21,8 +21,8 @@ scatter_legis <- ggplot(
   )
 
 # Create a boxplot of dim1 against nom7
-boxplot_legis <- ggplot(
-  filter(h_vview.final.clean, party_code == 100 | party_code == 200), 
+boxplot_legis.s <- ggplot(
+  filter(s_vview.final.clean, party_code == 100 | party_code == 200), 
   aes(dim1, coord1D, fill = party_code)
 ) +
   xlim(-1, 1) +
@@ -43,8 +43,8 @@ boxplot_legis <- ggplot(
   )
 
 # Create a scatterplot of party nom7 median per Congress
-scatter_median <- ggplot(
-  filter(h_legis.cong.med, party_code == 100 | party_code == 200), 
+scatter_median.s <- ggplot(
+  filter(s_legis.cong.med, party_code == 100 | party_code == 200), 
   aes(congress, median, color = party_code)
 ) +
   ylim(-1, 1) +
