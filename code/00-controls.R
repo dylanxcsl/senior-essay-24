@@ -21,3 +21,4 @@ dims_diff
 dims_meds
 votes_freq
 votes_prop
+votes_margin

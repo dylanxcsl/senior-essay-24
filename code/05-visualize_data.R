@@ -112,3 +112,23 @@ votes_prop <- ggplot(
     x = "Congress",
     y = "Proportion (%)"
   )
+
+## RUN CODE 4.
+## Scatterplot of mean vote margin per topic (7 or 705)
+votes_margin <- ggplot(
+  rolls_margin, aes(congress, mean, color = topic)
+) +
+  geom_point() +
+  facet_wrap(~chamber, labeller = labeller(chamber = c("1" = "House", "2" = "Senate"))) +
+  geom_smooth(se = FALSE) +
+  scale_color_manual(
+    name = "Vote type",
+    labels = c("Environmental", "Pollution"),
+    values = c("palegreen4", "darkorchid1")
+  ) +
+  scale_x_continuous(breaks = seq(88, 118, 4)) +
+  theme(panel.background = element_blank(), axis.line = element_line(color = "black")) +
+  labs(
+    x = "Congress",
+    y = "Mean margin"
+  )
