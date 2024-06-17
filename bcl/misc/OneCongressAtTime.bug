@@ -1,0 +1,24 @@
+model {
+	## loop over legislators
+	for(i in 1:n) {
+		## Loop over roll calls
+		for(j in 1:m) {
+			logit(pi[i,j])<-x[i]*beta[j]-alpha[j]
+			y[i,j] ~ dbern(pi[i,j])
+		}
+	}
+
+	## Set Priors for legislators, distributed around zero with Std Dev. of one.
+	for(i in 1:n){
+		x[i] ~ dnorm(0,1)
+	}
+
+
+	## Use estimated parameters as hard priors for roll calls
+	## The estimated Discrimination and Difficulty parameters produced by IDEAL
+	## are saved in two one-column matrices and used as hard priors.
+	for(j in 1:m){
+		beta[j]<-betap[j,1]
+		alpha[j]<-alphap[j,1]
+	}
+}
