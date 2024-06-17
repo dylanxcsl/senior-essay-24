@@ -246,7 +246,7 @@ end
  
 clear
 set mem 2000m
-cd "~/Desktop/Environmental Voting/03. Stata"
+cd "~/Projects/GitHub/senior-essay-24/03. Stata"
 
 ** Set global macros and load data. Should be changed to user's specifications.
 global firstcong	= 91

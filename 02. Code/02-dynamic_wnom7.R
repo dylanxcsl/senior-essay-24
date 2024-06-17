@@ -1,7 +1,7 @@
 # LIBRARY
-# library(wnominate)
-# library(Rvoteview)
 # library(tidyverse)
+# library(Rvoteview)
+# library(wnominate)
 # library(pscl)
 
 # DATA
@@ -470,7 +470,7 @@ env_91to117 <- rbind(env_91to92, env_93to94, env_95to97, env_98to100,
                      env_101to103, env_104to105, env_106to109, env_110to111,
                      env_112, env_113, env_114, env_115, env_116to117)
 
-# write.csv(ideal_91to117, "03. Results/dyn_wnom7.csv")
+# write.csv(ideal_91to117, "04. Results/dyn_wnom7.csv")
 
 summary(wnom_91to92)
 summary(wnom_93to94)z

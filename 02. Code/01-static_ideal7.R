@@ -5,7 +5,7 @@
 # library(pscl)
 
 # DATA
-rolls <- read.csv("data/rcv_voteview_v3_2_91to117(1).csv") |> as_tibble()
+rolls <- read.csv("01. Data/rcv_voteview_v3_2_91to117(1).csv") |> as_tibble()
 rolls <- rolls |> filter(majortopic == 7)
 
 # ROLLCALL OBJECT
@@ -48,4 +48,4 @@ ideal7 <- left_join(members, ideal7, by = "icpsr")
 # JOIN IDEAL AND WNOM
 dim7 <- left_join(ideal7, wnom7, by = c("congress", "chamber", "icpsr", "name", "party", "state", "district"))
 
-# write.csv(dim7, "03. Results/dim7.csv")
+# write.csv(dim7, "04. Results/stat_ideal7.csv")

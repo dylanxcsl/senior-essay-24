@@ -246,14 +246,14 @@ end
  
 clear
 set mem 2000m
-cd "~/Desktop/Environmental Voting/output/stata"
+cd "~/Projects/GitHub/senior-essay-24/03. Stata"
 
 ** Set global macros and load data. Should be changed to user's specifications.
 global firstcong	= 91
 global lastcong 	= 117
 global issue		= 7
 global chamber 		House // Options are House and Senate
-insheet using "${chamber}-${firstcong}-to-${lastcong}-Issue-Area-${issue}-lcv_nomissing.csv", clear
+insheet using "${chamber}-${firstcong}-to-${lastcong}-Issue-Area-${issue}-ideal_nomissing.csv", clear
 
 ** Sort by member and Congress. This makes it easier to inspect the relevant data 
 sort icpsr congress
@@ -439,5 +439,5 @@ order congress chamber icpsr adjust_d1 // adjust_d2 adjust_lowerd2 adjust_upperd
 sort congress chamber
 
 ** Save files as .dta or .csv
-save "Adjusted-${chamber}-${firstcong}-to-${lastcong}-Issue-Area-${issue}-nomissing.dta", replace
-outsheet using "Adjusted-${chamber}-${firstcong}-to-${lastcong}-Issue-Area-${issue}-lcv_nomissing.csv", replace comma
+save "Adjusted-${chamber}-${firstcong}-to-${lastcong}-Issue-Area-${issue}-ideal_nomissing.dta", replace
+outsheet using "Adjusted-${chamber}-${firstcong}-to-${lastcong}-Issue-Area-${issue}-ideal_nomissing.csv", replace comma

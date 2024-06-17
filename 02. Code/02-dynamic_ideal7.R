@@ -1,7 +1,7 @@
 # LIBRARY
-# library(wnominate)
-# library(Rvoteview)
 # library(tidyverse)
+# library(Rvoteview)
+# library(wnominate)
 # library(pscl)
 
 # DATA
@@ -1020,4 +1020,4 @@ ideal_91to117 <- rbind(ideal91, ideal92, ideal93, ideal94, ideal95, ideal96, ide
                        ideal110, ideal111, ideal112, ideal113, ideal114, ideal115,
                        ideal116, ideal117)
 
-# write.csv(ideal_91to117, "03. Results/dyn_ideal7.csv")
+# write.csv(ideal_91to117, "04. Results/dyn_ideal7.csv")
